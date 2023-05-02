@@ -217,9 +217,9 @@ app.layout = dbc.Container(
 def update_chart(breeds_selected, attribute_selected, weight_selected, gender_selected,last_selected_weight):
     try:
         
-        dogs_data = pd.read_csv('C:/Users/jacks/downloads/dog_breeds.csv')
-
-        dogs_data
+        main_dir = pathlib.Path(__file__).parent
+        data = main_dir / 'dog_breeds.csv'
+        dogs_data = pd.read_csv(data)
 
         #drop if missing value for location
         dogs_data.dropna(subset='Name', inplace=True)
