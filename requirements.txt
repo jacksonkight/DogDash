@@ -2,3 +2,4 @@ dash==2.7
 pandas
 plotly.express
 dash_bootstrap_components
+gunicorn
