@@ -7,6 +7,7 @@ from PIL import Image
 
 app = Dash(__name__, external_stylesheets=[dbc.themes.CERULEAN], use_pages=True, pages_folder="")
 app.title= 'Dog Breed Dash'
+server= app.server
 
 dogs_data = pd.read_csv('C:/Users/jacks/downloads/dog_breeds.csv')
  
