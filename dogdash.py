@@ -4,12 +4,15 @@ import plotly.express as px
 from dash import Dash, html, Input, Output, State, dcc, ctx
 import dash_bootstrap_components as dbc
 from PIL import Image
+import pathlib
 
 app = Dash(__name__, external_stylesheets=[dbc.themes.CERULEAN], use_pages=True, pages_folder="")
 app.title = 'Dog Breed Dash'
 server = app.server
 
-dogs_data = pd.read_csv('C:/Users/jacks/downloads/dog_breeds.csv')
+main_dir = pathlib.Path(__file__).parent
+data = main_dir / 'dog_breeds.csv'
+dogs_data = pd.read_csv(data)
  
 dogs_data
 
