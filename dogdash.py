@@ -4,6 +4,7 @@ import plotly.express as px
 from dash import Dash, html, Input, Output, State, dcc, ctx
 import dash_bootstrap_components as dbc
 import pathlib
+import gunicorn
 
 app = Dash(__name__, external_stylesheets=[dbc.themes.CERULEAN], use_pages=True, pages_folder="")
 app.title = 'Dog Breed Dash'
