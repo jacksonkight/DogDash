@@ -4,14 +4,13 @@ import plotly.express as px
 from dash import Dash, html, Input, Output, State, dcc, ctx
 import dash_bootstrap_components as dbc
 import pathlib
-import gunicorn
 
 app = Dash(__name__, external_stylesheets=[dbc.themes.CERULEAN], use_pages=True, pages_folder="")
 app.title = 'Dog Breed Dash'
 server = app.server
 
 main_dir = pathlib.Path(__file__).parent
-data = main_dir / 'dog_breeds.csv'
+data = main_dir / 'assets' / 'dog_breeds.csv'
 dogs_data = pd.read_csv(data)
  
 dogs_data
@@ -219,7 +218,7 @@ def update_chart(breeds_selected, attribute_selected, weight_selected, gender_se
     try:
         
         main_dir = pathlib.Path(__file__).parent
-        data = main_dir / 'dog_breeds.csv'
+        data = main_dir / 'assets' / 'dog_breeds.csv'
         dogs_data = pd.read_csv(data)
 
         #drop if missing value for location
