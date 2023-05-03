@@ -16,7 +16,7 @@ dogs_data = pd.read_csv(data)
 dogs_data
 
 #drop if missing value for location
-dogs_data.dropna(subset='Name', inplace=True)
+dogs_data.dropna(subset=['Name'], inplace=True)
 
 #set location as the index
 dogs_data.set_index('Name', inplace=True)
@@ -222,7 +222,7 @@ def update_chart(breeds_selected, attribute_selected, weight_selected, gender_se
         dogs_data = pd.read_csv(data)
 
         #drop if missing value for location
-        dogs_data.dropna(subset='Name', inplace=True)
+        dogs_data.dropna(subset=['Name'], inplace=True)
 
         #set location as the index
         dogs_data.set_index('Name', inplace=True)
